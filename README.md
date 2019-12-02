@@ -2,34 +2,32 @@
 System monitoring tools
 
 
-Systemload 
-
-dstat -cndymlp -N total -D total 5 25
-
-
-dstat -cndymlp -N total --output test
-
-With timestamp
-dstat -tcdrgilmns --output dstat.csv --noupdate 5
-
-
 Create graphs easily (without excel or python)
 
-(1) Install Gnuplot and dstat 
-
+## Install Gnuplot and dstat 
+```
 sudo apt-get install gnuplot-x11 dstat
-(Dstat 0.7.2, gnuplot 4.6 patchlevel 6) on 16.04.5 LTS (Xenial Xerus)
+```
+I am using these versions (Dstat 0.7.2, gnuplot 4.6 patchlevel 6) on 16.04.5 LTS (Xenial Xerus)
 ####################################
 ####################################
 
-(2) Start dstat 
+## Start dstat 
+This will create the raw file
+
+
+```
 dstat -tc 5 10 > dstat.raw
+```
 or
+```
 dstat -tcdrgilmns 5 500 > dstat.raw
+```
 
-(3) Create Example gnuplot script, e.g.
+## Create Example gnuplot script, e.g.
+
+```
 ####################################
-
 #!/usr/bin/gnuplot -persist
 
 set xdata time
@@ -57,11 +55,23 @@ set term png
 set output 'dstat.png'
 replot
 ####################################
+```
 
-(3) Then run
 
+## Then run
+
+```
 gnuplot -persist gplot.sh
+```
 
+
+
+Systemload 
+
+dstat -cndymlp -N total -D total 5 25
+dstat -cndymlp -N total --output test
+With timestamp
+dstat -tcdrgilmns --output dstat.csv --noupdate 5
 
 
 
