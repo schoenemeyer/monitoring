@@ -69,7 +69,7 @@ You will get something like this
 
 
 
-![After processing](https://github.com/schoenemeyer/monitoring/blob/master/figures/dstat.pngfigures/dstat.png)
+<img src="https://github.com/schoenemeyer/monitoring/blob/master/figures/dstat.pngfigures/dstat.png" width="580"> <img> 
 
 
 
