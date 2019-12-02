@@ -65,7 +65,10 @@ replot
 gnuplot -persist gplot.sh
 ```
 
-figures/dstat.png
+You will get something like this
+
+
+https://github.com/schoenemeyer/monitoring/blob/master/figures/dstat.pngfigures/dstat.png
 
 
 
