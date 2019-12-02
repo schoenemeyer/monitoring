@@ -65,6 +65,8 @@ replot
 gnuplot -persist gplot.sh
 ```
 
+figures/dstat.png
+
 
 
 Systemload 
