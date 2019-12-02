@@ -6,6 +6,7 @@ Create graphs easily (without excel or python)
 
 ## Install Gnuplot and dstat 
 ```
+sudo apt-get update -y
 sudo apt-get install gnuplot-x11 dstat
 ```
 I am using these versions (Dstat 0.7.2, gnuplot 4.6 patchlevel 6) on 16.04.5 LTS (Xenial Xerus)
