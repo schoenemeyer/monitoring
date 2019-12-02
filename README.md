@@ -68,7 +68,8 @@ gnuplot -persist gplot.sh
 You will get something like this
 
 
-https://github.com/schoenemeyer/monitoring/blob/master/figures/dstat.pngfigures/dstat.png
+
+![After processing](https://github.com/schoenemeyer/monitoring/blob/master/figures/dstat.pngfigures/dstat.png)
 
 
 
