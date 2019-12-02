@@ -69,11 +69,17 @@ You will get something like this
 
 <img src="https://github.com/schoenemeyer/monitoring/blob/master/figures/dstat.png" width="580"> <img> 
 
-Systemload 
+
+
+## Systemload 
+
+Other Options
 ```
 dstat -cndymlp -N total -D total 5 25
 dstat -cndymlp -N total --output test
+```
 With timestamp
+```
 dstat -tcdrgilmns --output dstat.csv --noupdate 5
 ```
 
