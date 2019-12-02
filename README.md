@@ -65,7 +65,7 @@ replot
 gnuplot -persist gplot.sh
 ```
 You will get something like this
-<img src="https://github.com/schoenemeyer/monitoring/blob/master/figures/dstat.pngfigures/dstat.png" width="580"> <img> 
+<img src="https://github.com/schoenemeyer/monitoring/blob/master/figures/dstat.png" width="580"> <img> 
 
 Systemload 
 ```
