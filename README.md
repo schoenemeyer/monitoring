@@ -68,12 +68,12 @@ gnuplot -persist gplot.sh
 
 
 Systemload 
-
+```
 dstat -cndymlp -N total -D total 5 25
 dstat -cndymlp -N total --output test
 With timestamp
 dstat -tcdrgilmns --output dstat.csv --noupdate 5
-
+```
 
 
 
