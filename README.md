@@ -22,7 +22,7 @@ dstat -tc 5 10 > dstat.raw
 ```
 or
 ```
-dstat -tcdrgilmns 5 500 > dstat.raw
+dstat --time --cpu --mem --load --disk --io > data.raw
 ```
 
 ## Create Example gnuplot script, e.g.
@@ -47,7 +47,7 @@ set ylabel "total-cpu-usage"
 # date/time |usr sys idl wai hiq siq
 #13-06 01:18:14| 5 1 93 1 0 0
 
-plot "< tail -n +3 dstat.raw" using 1:3 w lp t "user [%]", \
+plot "< tail -n +3 data.raw" using 1:3 w lp t "user [%]", \
 "" u 1:4 w lp t "system [%]", \
 "" u 1:5 w lp t "idle [%]", \
 "" u 1:6 w lp t "wait [%]"
