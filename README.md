@@ -18,14 +18,17 @@ This will create the raw file
 
 
 ```
-dstat -tc 5 10 > dstat.raw
+dstat -tc 5 10 > data.raw
 ```
 or
 ```
 dstat --time --cpu --mem --load --disk --io > data.raw
 ```
-
-## Create Example gnuplot script, e.g.
+or
+```
+dstat --output stats.csv  -tc 5 20
+```
+## Create Example gnuplot script, for read asci file
 
 ```
 ####################################
@@ -58,6 +61,12 @@ replot
 ####################################
 ```
 
+or for csv file
+
+```
+set datafile separator ","
+plot 'stats.csv' using 1:4 w lp t "idl [%]"
+```
 
 ## Then run
 
