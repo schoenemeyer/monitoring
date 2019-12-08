@@ -81,7 +81,9 @@ set ylabel "total-cpu-usage"
 # date/time |usr sys idl wai hiq siq
 #13-06 01:18:14| 5 1 93 1 0 0
 
-plot 'dstat.csv' every ::5 using 1:4 w lp t "idl [%]"
+plot 'dstat.csv' every ::6 using 1:3 w lp t "usr [%]", 'dstat.csv' every ::6 using 1:4 w lp t "sys [%]", \
+'dstat.csv' every ::6 using 1:5 w lp t "idl [%]"
+
 set term png
 set output 'dstat.png'
 replot
