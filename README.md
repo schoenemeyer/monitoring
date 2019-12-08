@@ -28,7 +28,7 @@ or
 ```
 dstat --output stats.csv  -tc 5 20
 ```
-## Create Example gnuplot script, for read asci file
+## Create Example gnuplot script, for read asci raw file
 
 ```
 ####################################
@@ -66,6 +66,32 @@ or for csv file
 ```
 set datafile separator ","
 plot 'stats.csv' using 1:4 w lp t "idl [%]"
+```
+Create a file gplot.sh with the following content, if you read the csv file. 
+You need to skip the first 5 lines from the header.
+```
+#!/usr/bin/gnuplot -persist
+
+set xdata time
+set timefmt "%d-%m %H:%M:%S"
+set format x "%H:%M"
+
+set yrange [0:100]
+
+set grid
+set datafile separator ","
+set title "dstat CPU Usage"
+set xlabel "time"
+set ylabel "total-cpu-usage"
+
+#-----time----- ----total-cpu-usage----
+# date/time |usr sys idl wai hiq siq
+#13-06 01:18:14| 5 1 93 1 0 0
+
+plot 'dstat.csv' every ::5 using 1:4 w lp t "idl [%]"
+set term png
+set output 'dstat.png'
+replot
 ```
 
 ## Then run
