@@ -60,13 +60,6 @@ set output 'dstat.png'
 replot
 ####################################
 ```
-
-or for csv file
-
-```
-set datafile separator ","
-plot 'stats.csv' using 1:4 w lp t "idl [%]"
-```
 Create a file gplot.sh with the following content, if you read the csv file. 
 You need to skip the first 5 lines from the header.
 ```
