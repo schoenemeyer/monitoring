@@ -1,4 +1,4 @@
-# monitoring
+## monitoring
 System monitoring tools
 
 
@@ -113,6 +113,38 @@ With timestamp
 dstat -tcdrgilmns --output dstat.csv --noupdate 5
 ```
 
+## FIO for K8s
+```
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: fiobench-2
+spec:
+  template:
+    spec:
+      volumes:
+        - name: efs
+          nfs:
+            server: 192.168.20.80
+            path: /volume1/NFSVolume/temp/gaga/efs
+            readOnly: true
+      containers:
+      - name: fio
+        image: ivotron/fio:latest
+# Mount the NFS volume in the container
+        volumeMounts:
+            - name: efs
+              mountPath: /efs
+        resources:
+          limits:
+            cpu: "2"
+          requests:
+            cpu: "2"
+        command: ["/bin/sh","-c"]
+        args: ["cd /efs; mkdir tmp; fio --readwrite=read --ioengine=psync --direct=0 --iodepth=64 --bs=64k --size=1g --name=test_fio1 --directory=tmp --numjobs=2"]
+      restartPolicy: Never
+  backoffLimit: 4
+```
 
 
 
