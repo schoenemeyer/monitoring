@@ -141,7 +141,7 @@ spec:
           requests:
             cpu: "2"
         command: ["/bin/sh","-c"]
-        args: ["cd /efs; mkdir tmp; fio --readwrite=read --ioengine=psync --direct=0 --iodepth=64 --bs=64k --size=1g --name=test_fio1 --directory=tmp --numjobs=2"]
+        args: [" fio --readwrite=read --ioengine=psync --direct=0 --iodepth=64 --bs=64k --size=1g --name=test_fio1 --directory=/efs --numjobs=2"]
       restartPolicy: Never
   backoffLimit: 4
 ```
